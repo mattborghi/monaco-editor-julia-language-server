@@ -13,7 +13,7 @@ export function launch(socket: rpc.IWebSocket) {
     // start the language server as an external process
     const extJsonServerPathFile = path.resolve(__dirname, 'server.jl');
     const extJsonServerPath = path.resolve(__dirname);
-    const SrcPath = "jl"
+    const SrcPath = "code"
     const DepotPath = "/home/borghi/.julia/packages"
     const socketConnection = server.createConnection(reader, writer, () => socket.dispose());
     const serverConnection = server.createServerProcess('JSON', 'julia', [`--project=${extJsonServerPath}`, extJsonServerPathFile, SrcPath, DepotPath]);
