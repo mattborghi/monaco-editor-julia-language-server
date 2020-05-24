@@ -19,11 +19,16 @@ monaco.languages.register({
 });
 
 // create Monaco editor
-// const value = `{
-//     "$schema": "http://json.schemastore.org/coffeelint",
-//     "line_endings": "unix"
-// }`;
-const value = "";
+const value = `
+using Statistics
+
+mean([1,2,3])
+
+function hello_world()
+    println("hello world!")
+end
+`;
+// const value = "";
 const editor = monaco.editor.create(document.getElementById("container")!, {
     model: monaco.editor.createModel(value, 'json', monaco.Uri.parse('inmemory://model.json')),
     glyphMargin: true,
