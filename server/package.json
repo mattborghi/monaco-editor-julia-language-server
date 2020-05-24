@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "node-example",
+  "version": "0.13.0",
+  "dependencies": {
+    "express": "^4.17.1",
+    "monaco-editor-core": "^0.20.0",
+    "monaco-languageclient": "^0.13.0",
+    "normalize-url": "^5.0.0",
+    "reconnecting-websocket": "^3.2.2",
+    "request-light": "^0.3.0",
+    "vscode-json-languageservice": "^3.6.0",
+    "vscode-jsonrpc": "^5.0.1",
+    "vscode-languageserver": "^6.1.1",
+    "vscode-uri": "^2.1.1",
+    "vscode-ws-jsonrpc": "^0.2.0",
+    "ws": "^7.3.0"
+  },
+  "scripts": {
+    "prepare": "npm run clean && npm run build",
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf lib",
+    "copy": "cp src/index.html lib/index.html",
+    "copy:jl": "cp src/server.jl src/Project.toml src/Manifest.toml -t lib",
+    "build": "npm run compile && webpack --mode=development && npm run copy && npm run copy:jl",
+    "start": "node lib/server.js",
+    "start:ext": "node lib/server.js --external"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.5",
+    "@types/ws": "^7.2.4",
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.2.1",
+    "typescript": "^3.9.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
+  }
+}
