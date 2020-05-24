@@ -14,7 +14,7 @@ Just run the following on the terminal
 git clone https://github.com/mattborghi/monaco-editor-julia-language-server
 cd server
 npm install
-npm run start:ext
+npm run start
 ```
 
 After staring the express server go to http://localhost:3000 to open the sample page.
