@@ -19,16 +19,18 @@ monaco.languages.register({
 });
 
 // create Monaco editor
-const value = `
-using Statistics
+const value = `using Statistics
 
-mean([1,2,3])
+μ = mean([1,2,3])
 
 function hello_world()
     println("hello world!")
 end
+
+hello_world()
+
 `;
-// const value = "";
+
 const editor = monaco.editor.create(document.getElementById("container")!, {
     model: monaco.editor.createModel(value, 'json', monaco.Uri.parse('inmemory://model.json')),
     glyphMargin: true,
