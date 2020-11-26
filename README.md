@@ -8,12 +8,20 @@ This package is intented for connecting [Monaco Editor](https://microsoft.github
 
 ### Quick instructions
 
-Just run the following on the terminal
+First run the Julia Language Server
+
+```sh
+cd server/src/julia
+julia --project="." server.jl jl ~/home/<user>/.julia/packages
+```
+
+Then run the following on the terminal
 
 ```bash
 git clone https://github.com/mattborghi/monaco-editor-julia-language-server
 cd server
 npm install
+npm run build
 npm run start
 ```
 
