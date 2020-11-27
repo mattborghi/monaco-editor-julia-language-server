@@ -8,20 +8,28 @@ This package is intented for connecting [Monaco Editor](https://microsoft.github
 
 ### Quick instructions
 
-First run the Julia Language Server
+> Actually, the first step is not necessary as it's run there.
+
+1. Run the Julia Language Server
 
 ```sh
 cd server/src/julia
 julia --project="." server.jl jl ~/home/<user>/.julia/packages
 ```
 
-Then run the following on the terminal
+2. As the cache folder is not commited, create it
+
+```bash
+mkdir server/cache
+```
+
+3. Run the following on the terminal
 
 ```bash
 git clone https://github.com/mattborghi/monaco-editor-julia-language-server
 cd server
 npm install
-npm run build
+npm run build or npm run prepare
 npm run start
 ```
 
