@@ -20,7 +20,7 @@
     "compile": "tsc",
     "watch": "tsc -w",
     "clean": "rimraf lib",
-    "copy": "cp src/index.html lib/index.html",
+    "copy": "cp src/index.html src/favicon.ico -t lib",
     "copy:jl": "cp src/julia/server.jl src/julia/Project.toml src/julia/Manifest.toml -t lib && cp -r src/code lib/code",
     "build": "npm run compile && webpack --mode=development && npm run copy && npm run copy:jl",
     "start": "node lib/server.js"
