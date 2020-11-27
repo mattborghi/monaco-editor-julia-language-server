@@ -25,34 +25,46 @@ const value = `using Statistics
 
 μ = mean([1,2,3])
 
+"""
+## Hello World
+
+Esta es la function hello_world
+"""
 function hello_world()
     println("hello world!")
 end
 
 hello_world()
 
+using Zygote
+
+Zygote.gradient(sin, 1)
 `;
 
+// Load Monaco Editor into a container id
 const editor = monaco.editor.create(document.getElementById("container")!, {
   model: monaco.editor.createModel(
     value,
-    "julia",
-    monaco.Uri.parse(
-      "file:///home/borghi/Desktop/monaco-editor-julia-language-server/server/src/code/file.jl"
-    )
+    "julia"
+    // The language is infered from the Uri if not passed to the argument above
+    // monaco.Uri.parse(
+    //   "file:///home/borghi/Desktop/umc/monaco-editor-julia-language-server/server/src/code/file.jl"
+    // )
   ), // 'inmemory://model.json'
   glyphMargin: true,
   theme: "vs-dark",
   lightbulb: {
     enabled: true,
   },
+  fontFamily: 'comic-sans',
 });
 
 // install Monaco language client services
-MonacoServices.install(editor, {
-  rootUri:
-    "file:///home/borghi/Desktop/monaco-editor-julia-language-server/server/src/code/",
-});
+MonacoServices.install(editor);
+// , {
+//   rootUri:
+//     "file:///home/borghi/Desktop/umc/monaco-editor-julia-language-server/server/src/code/",
+// }
 
 // create the web socket
 const url = createUrl("/sampleServer");
