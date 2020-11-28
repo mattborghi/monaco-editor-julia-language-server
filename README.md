@@ -23,7 +23,15 @@ julia --project="." server.jl jl ~/home/<user>/.julia/packages
 mkdir server/cache
 ```
 
-3. Run the following on the terminal
+3. Change the `.env` file with your directories for
+
+    - `PROJECT_PATH`: path where the project toml is.
+    - `SERVER_FILE`: location of server.jl file.
+    - `SOURCE_PATH`: path of your Project.toml.
+    - `DEPOT_PATH`: I suggest to leave it empty.
+    - `STORE_PATH`: where the indexed packages will be stored.
+
+4. Run the following on the terminal
 
 ```bash
 git clone https://github.com/mattborghi/monaco-editor-julia-language-server
