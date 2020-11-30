@@ -43,28 +43,17 @@ Zygote.gradient(sin, 1)
 
 // Load Monaco Editor into a container id
 const editor = monaco.editor.create(document.getElementById("container")!, {
-  model: monaco.editor.createModel(
-    value,
-    "julia"
-    // The language is infered from the Uri if not passed to the argument above
-    // monaco.Uri.parse(
-    //   "file:///home/borghi/Desktop/umc/monaco-editor-julia-language-server/server/src/code/file.jl"
-    // )
-  ), // 'inmemory://model.json'
+  model: monaco.editor.createModel(value, "julia"),
   glyphMargin: true,
   theme: "vs-dark",
   lightbulb: {
     enabled: true,
   },
-  fontFamily: 'comic-sans',
+  fontFamily: "comic-sans",
 });
 
 // install Monaco language client services
 MonacoServices.install(editor);
-// , {
-//   rootUri:
-//     "file:///home/borghi/Desktop/umc/monaco-editor-julia-language-server/server/src/code/",
-// }
 
 // create the web socket
 const url = createUrl("/sampleServer");

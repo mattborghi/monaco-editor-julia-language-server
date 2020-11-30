@@ -34,7 +34,6 @@ mkdir server/cache
 4. Run the following on the terminal
 
 ```bash
-git clone https://github.com/mattborghi/monaco-editor-julia-language-server
 cd server
 npm install
 npm run build or npm run prepare

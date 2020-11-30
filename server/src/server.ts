@@ -22,7 +22,7 @@ const app = express();
 // server the static content, i.e. index.html
 app.use(express.static(__dirname));
 // start the server
-const server = app.listen(3000);
+const server = app.listen(process.env.PORT);
 // create the web socket
 const wss = new ws.Server({
     noServer: true,
@@ -30,25 +30,26 @@ const wss = new ws.Server({
 });
 server.on('upgrade', (request: http.IncomingMessage, socket: net.Socket, head: Buffer) => {
     const pathname = request.url ? url.parse(request.url).pathname : undefined;
-    if (pathname === '/sampleServer') {
-        wss.handleUpgrade(request, socket, head, webSocket => {
-            const socket: rpc.IWebSocket = {
-                send: content => webSocket.send(content, error => {
-                    if (error) {
-                        throw error;
-                    }
-                }),
-                onMessage: cb => webSocket.on('message', cb),
-                onError: cb => webSocket.on('error', cb),
-                onClose: cb => webSocket.on('close', cb),
-                dispose: () => webSocket.close()
-            };
-            // launch the server when the web socket is opened
-            if (webSocket.readyState === webSocket.OPEN) {
-                launch(socket);
-            } else {
-                webSocket.on('open', () => launch(socket));
-            }
-        });
+    if (pathname === process.env.CHANNEL) {
+      wss.handleUpgrade(request, socket, head, (webSocket) => {
+        const socket: rpc.IWebSocket = {
+          send: (content) =>
+            webSocket.send(content, (error) => {
+              if (error) {
+                throw error;
+              }
+            }),
+          onMessage: (cb) => webSocket.on("message", cb),
+          onError: (cb) => webSocket.on("error", cb),
+          onClose: (cb) => webSocket.on("close", cb),
+          dispose: () => webSocket.close(),
+        };
+        // launch the server when the web socket is opened
+        if (webSocket.readyState === webSocket.OPEN) {
+          launch(socket);
+        } else {
+          webSocket.on("open", () => launch(socket));
+        }
+      });
     }
 })
