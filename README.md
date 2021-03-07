@@ -8,7 +8,7 @@ This package is intented for connecting [Monaco Editor](https://microsoft.github
 
 ### Quick instructions
 
-> Actually, the first step is not necessary as it's run there.
+> Actually, the first step is **NOT** necessary as it's run there.
 
 1. Run the Julia Language Server
 
