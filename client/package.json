@@ -61,7 +61,7 @@
     "@babel/preset-typescript": "^7.12.17",
     "babel-loader": "^8.2.2",
     "babel-plugin-check-es2015-constants": "^6.22.0",
-    "copy-webpack-plugin": "^7.0.0",
+    "copy-webpack-plugin": "^8.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.2",
     "file-loader": "^6.2.0",
