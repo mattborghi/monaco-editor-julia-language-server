@@ -37,6 +37,10 @@ npm run start:dev
 
 > You can also run the script `RUN.dev.sh`.
 
+## Preview video
+
+[![Video Preview](./assets/imag/preview.png)](https://youtu.be/0hwiSMRdq7M)
+
 ## Resources
 
 - [monaco-languageclient](https://github.com/TypeFox/monaco-languageclient).
