@@ -1,0 +1,15 @@
+/* Dialog scrollbar settings */
+.CodeEditor::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+/* Draggable scrolling element */
+.CodeEditor::-webkit-scrollbar-thumb {
+  background: rgba(80, 80, 80, 0.7);
+  outline: 1px solid grey;
+}
+
+.CodeEditor::-webkit-scrollbar-thumb:hover {
+  background: rgba(80, 80, 80, 0.9);
+}

@@ -1,5 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
+import { makeStyles } from '@material-ui/core/styles';
 import _ from "lodash";
+
+const useStyles = makeStyles((theme) => ({
+    editor: {
+        height: "100%",
+        width: "100%",
+        overflow: "hidden",
+    }
+}));
 
 // TODO: Import other themes and let the user choose them 
 
@@ -10,6 +19,7 @@ import _ from "lodash";
 //     })
 
 const CodeEditor = () => {
+    const classes = useStyles();
     const editor = useRef(null);
     const element = useRef(null);
     const [value, setValue] = useState("");
@@ -42,7 +52,7 @@ const CodeEditor = () => {
         return () => editor.current
     }, []);
 
-    return <div ref={element} style={{ width: '100%', height: '100%' }} />;
+    return <div className={classes.editor} ref={element} />;
 };
 
 export default CodeEditor;

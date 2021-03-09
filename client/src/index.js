@@ -6,11 +6,16 @@ import "setimmediate";
 import "./styles/main.scss";
 
 // Connect Monaco Editors to Julia Language Servers
-import { JuliaClient } from "./LanguageServer.jsx"
+import { JuliaClient } from "./components/MonacoEditor/LanguageServer.jsx";
 JuliaClient()
 
-import MonacoEditor from "./MonacoEditor.jsx";
+import MonacoEditor from "./components/MonacoEditor/MonacoEditor.jsx";
+import GitHub from "./components/GitHub/Github.jsx";
+
 ReactDOM.render(
-    <MonacoEditor />,
+    <>
+        <MonacoEditor />
+        <GitHub />
+    </>,
     document.getElementById("root")
 );
