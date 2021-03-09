@@ -36,7 +36,7 @@ mkdir server/cache
 ```bash
 cd server
 npm install
-npm run build or npm run prepare
+npm run prepare
 npm run start
 ```
 

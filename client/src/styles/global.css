@@ -1,0 +1,508 @@
+* {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+  }
+  *:focus {
+    outline: none;
+  }
+  
+  #product-creator-editor {
+    height: 90vh;
+  }
+  
+  #process-creator-editor {
+    height: 90vh;
+  }
+  
+  #model-creator-panel {
+    height: 90vh;
+  }
+  
+  #contract-creator-editor {
+    height: 90vh;
+  }
+  
+  #hidden-playground-editor {
+    height: 90vh;
+  }
+  
+  #main-contract-panel {
+    display: flex;
+    height: 100%;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    /* transform: translateX(5%); */
+  }
+  
+  #test-creator-editor {
+    height: 90vh;
+  }
+  
+  #test-runner-table {
+    height: 90vh;
+  }
+  
+  #inherent-risk-form {
+    width: 100%;
+    padding: 50px;
+  }
+  
+  #document-generator-table {
+    height: 90vh;
+  }
+  
+  #model-monitoring-panel {
+    height: 90vh;
+    max-width: 40%;
+  }
+  
+  p#discrete-slider-custom {
+    color: rgb(150, 200, 150);
+  }
+  
+  span.MuiSlider-root.MuiSlider-marked {
+    color: rgb(150, 200, 150);
+  }
+  
+  #pattern-button {
+    background: linear-gradient(to bottom, #424242 0%, #505050 100%);
+    width: 64px;
+    border: none;
+    border-radius: 4px;
+    /* -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s; */
+  }
+  
+  #sign-in-button {
+    background-color: rgb(150, 200, 150);
+  }
+  
+  #tooltip:hover {
+    background-color: transparent;
+  }
+  
+  #btn-transparent {
+    background-color: transparent;
+    color: grey;
+    border: none;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+  }
+  
+  /* #btn-transparent:hover {
+    background-color: transparent;
+  } */
+  
+  .div-selector{
+    /* position: relative;
+    top: 0px;
+    right: 0px;
+    z-index: 999; */
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+  }
+  
+  a {
+    outline: 0 !important;
+    color: grey;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: darkgrey;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(133, 130, 130);
+  }
+  
+  /* selected link */
+  a:active {
+    color: darkgrey;
+  }
+  
+  #div-maintenance {
+    background: linear-gradient(to top, #424242 0%, #3a3939 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 35px 0 rgba(49, 57, 66, 0.5);
+  }
+  
+  /* svg.MuiSvgIcon-root.MuiStepIcon-root.MuiStepIcon-completed {
+    color: rgb(150,200,150);
+  }
+  
+  svg.MuiSvgIcon-root.MuiStepIcon-root.MuiStepIcon-active {
+    color: rgb(150,200,150);
+  } */
+  
+  svg.MuiSvgIcon-root.MuiStepIcon-root {
+    color: rgb(150, 200, 150);
+  }
+  
+  text.MuiStepIcon-text {
+    fill: #666666;
+  }
+  
+  /* body */
+  
+  /* #custom-scrollbar {
+    overflow: auto;
+    color: rgb(68, 68, 68, 1);
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 20px;
+    max-width: 300px;
+    height: 200px;
+  } */
+  
+  /* body:hover
+  #custom-scrollbar:hover {
+    overflow: scroll;
+  } */
+  
+  /* ***************************** */
+  /* ** CSS Scrollbar selectors ** */
+  /* ***************************** */
+  /* ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;    
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background-color: grey;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: grey;
+  } */
+  
+  /* 
+  TERMINOLOGY: 
+    * track: the space left in the vertical position.
+    * thumb: the object moving 
+  */
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(242, 242, 242, 0);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(221, 221, 221, 0.3);
+  }
+  /* :hover::-webkit-scrollbar-thumb { background: rgb(187, 187, 187, 0.6); } */
+  ::-webkit-scrollbar-thumb:horizontal:hover,
+  ::-webkit-scrollbar-thumb:vertical:hover {
+    background: rgb(187, 187, 187, 0.6);
+  }
+  ::-webkit-scrollbar-thumb:horizontal:active,
+  ::-webkit-scrollbar-thumb:vertical:active {
+    background: #999;
+  }
+  
+  /* The only scrollbar there is (in the ppal screen) is overlayed over the div */
+  /* #ppal-screen {
+    overflow-y: overlay;
+  } */
+  
+  /* html {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 70%;
+  }
+  body {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  } */
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .App {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+  .App p {
+    margin-bottom: 50px;
+    font-size: 2.4rem;
+  }
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 460px;
+  }
+  .dd-wrapper {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    width: 80%;
+  }
+  .dd-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    line-height: 38px;
+    border: 1px solid rgb(150, 200, 150);
+    border-radius: 3px;
+    cursor: default;
+    position: relative;
+    background-color: rgb(66, 66, 66);
+  }
+  .dd-header span {
+    margin-right: 20px;
+  }
+  .dd-header-title {
+    font-weight: 300;
+    margin: 2px 20px;
+    margin-right: 30px;
+    color: rgb(150, 200, 150);
+  }
+  .angle-down {
+    color: rgb(150, 200, 150);
+    margin-right: 20px;
+  }
+  .dd-list {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    /* border: 1px solid #dfdfdf; */
+    border-top: none;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: rgb(66, 66, 66);
+    -webkit-box-shadow: 0 2px 5px -1px #e8e8e8;
+    box-shadow: 0 2px 5px -1px #e8e8e8;
+    font-weight: 700;
+    padding: 15px 0;
+    max-height: 300px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  .dd-list-item {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 8px 10px;
+    line-height: 3.5rem;
+    cursor: default;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 70%;
+    color: rgb(150, 200, 150);
+  }
+  .dd-list-item.selected {
+    color: rgb(150, 200, 150);
+    background-color: rgb(85, 85, 85);
+  }
+  .dd-list-item:hover {
+    color: rgb(150, 200, 150);
+    background-color: rgb(85, 85, 85);
+  }
+  .dd-wrapper-single {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    width: 265px;
+  }
+  .dd-wrapper-single .dd-header {
+    border: 1px solid #ccc;
+  }
+  .dd-wrapper-single .dd-header .dd-header-name {
+    font-weight: 400;
+  }
+  .dd-wrapper-single .dd-list {
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  
+  .icon {
+    color: rgb(150, 200, 150);
+  }
+  
+  .center.bottom {
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    transform: translate(0%, -100%);
+  }
+  
+  .center.bottom.disabled {
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    transform: translate(0%, -100%);
+    color: grey;
+  }
+  
+  
+  .center {
+    position: absolute;
+    left: 50%;
+    transform: translateY(30%);
+  }
+  
+  .logo {
+    display: block;
+    width: 100%;
+    line-height: 80px;
+  }
+  
+  .text-center {
+    text-align: center !important;
+  }
+  
+  .logo span.logo-lg {
+    display: block;
+    position: sticky;
+  }
+  
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+  
+  .div-separator {
+    display: block;
+  }
+  
+  .div-lg {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .div-lg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* .twitter {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding: 0 10px;
+    border: 1px solid rgba(238,238,238 ,0.8);
+    border-radius: 5px;
+    color: rgba(117,117,117 ,1);
+    box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,0);
+  }
+  .twitter li {
+    cursor: pointer;
+  }
+  .twitter li:hover{
+    color: rgba(85,172,238 ,1);
+  }
+  .twitter__bird {
+    color: rgba(85,172,238 ,1);
+    font-size: 1.3em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .twitter li:not(:last-child):not(.twitter__bird) {
+    margin-right: 10px;
+  }
+  .twitter li  i:not(.fa-twitter):not(.fa-search):not(.fa-user-circle-o) {
+    margin-right: 3px;
+  }
+  .twitter li > button {
+    font-size: 0.8em;
+    border: 0;
+    background: rgba(85,172,238 ,1);
+    color: #fff;
+    border-radius: 100px;
+  } */
+  
+  #main-content {
+    margin-left: 25%;
+    height: 90vh;
+  }
+  
+  .main-window-pool {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .version-title {
+    color: grey;
+    padding-bottom: 20px;
+  }
+  
+  .main-window-pool button {
+    padding: 10px 0;
+    min-width: 300px;
+    max-width: 300px;
+  }
+  
+  /* Switch color */
+  
+  span.MuiSwitch-thumb {
+    color: rgb(150, 200, 150);
+  }
+  
+  span.MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+    background-color: rgb(150, 200, 150);
+  }
+  
+  th.MuiTableCell-root.MuiTableCell-head {
+    font-weight: bolder;
+  }

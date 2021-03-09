@@ -29,15 +29,20 @@ symserver_store_path = length(ARGS) ≥ 3 ? ARGS[3] : nothing
 # push!(LOAD_PATH, "~/home/borghi/Desktop/umc/UniversalMonteCarlo.jl")
 # @show LOAD_PATH
 
-# import Pkg
+import Pkg
 # In julia 1.4 this operation takes under a second. This can be
 # crushingly slow in older versions of julia though.
-# Pkg.instantiate()
+Pkg.instantiate()
 
 using LanguageServer, SymbolServer
 
-# @info "Running language server" env=Base.load_path()[1] src_path project_path depot_path
-server = LanguageServerInstance(stdin, stdout, project_path, depot_path, nothing, symserver_store_path)
+function err_handler(err, bt)
+    @info "There was an error"
+    println(err)
+end
+
+@info "Running language server" env=Base.load_path()[1] src_path project_path depot_path symserver_store_path
+server = LanguageServerInstance(stdin, stdout, project_path, depot_path, err_handler, symserver_store_path)
 server.runlinter = true
 # server.lint_options = LanguageServer.StaticLint.LintOptions(true, true, true, true, true, true, true, true, true, true)
 run(server)

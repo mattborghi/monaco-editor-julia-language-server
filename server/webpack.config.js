@@ -1,67 +1,69 @@
-/* --------------------------------------------------------------------------------------------
- * Copyright (c) 2018 TypeFox GmbH (http://www.typefox.io). All rights reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- * ------------------------------------------------------------------------------------------ */
-const path = require('path');
+const path = require("path");
 const lib = path.resolve(__dirname, "lib");
 
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
+const webpack = require("webpack");
+const { merge } = require("webpack-merge");
+const nodeExternals = require("webpack-node-externals");
 
 const common = {
     entry: {
-        "main": path.resolve(lib, "main.js"),
-        "editor.worker": 'monaco-editor-core/esm/vs/editor/editor.worker.js'
+        server: path.resolve(lib, "server.js"),
     },
     output: {
-        filename: '[name].bundle.js',
-        path: lib
+        filename: "[name].bundle.js",
+        path: lib,
     },
     module: {
-        rules: [{
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader']
-        },
-        {
-            test: /\.ttf$/,
-            use: ['file-loader']
-        }]
+        rules: [
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.ttf$/,
+                use: ["file-loader"],
+            },
+        ],
     },
-    target: 'web',
-    node: {
-        fs: 'empty',
-        child_process: 'empty',
-        net: 'empty',
-        crypto: 'empty'
-    },
-    resolve: {
-        alias: {
-            'vscode': require.resolve('monaco-languageclient/lib/vscode-compatibility')
-        },
-        extensions: ['.js', '.json', '.ttf']
-    }
+    target: "node",
+    // node: {
+    //   fs: "empty",
+    //   child_process: "empty",
+    //   net: "empty",
+    //   crypto: "empty",
+    // },
+    // resolve: {
+    //     alias: {
+    //         'vscode': require.resolve('monaco-languageclient/lib/vscode-compatibility')
+    //     },
+    //     extensions: ['.js', '.json', '.ttf']
+    // }
+    externals: [nodeExternals()],
 };
 
-if (process.env['NODE_ENV'] === 'production') {
+if (process.env["NODE_ENV"] === "production") {
     module.exports = merge(common, {
         plugins: [
-            new UglifyJSPlugin(),
+            // new UglifyJSPlugin(),
             new webpack.DefinePlugin({
-                'process.env.NODE_ENV': JSON.stringify('production')
-            })
-        ]
+                "process.env.NODE_ENV": JSON.stringify("production"),
+            }),
+            new webpack.LoaderOptionsPlugin({
+                minimize: true,
+            }),
+        ],
     });
 } else {
     module.exports = merge(common, {
-        devtool: 'source-map',
+        devtool: "source-map",
         module: {
-            rules: [{
-                test: /\.js$/,
-                enforce: 'pre',
-                loader: 'source-map-loader'
-            }]
-        }
-    })
-} 
+            rules: [
+                {
+                    test: /\.js$/,
+                    enforce: "pre",
+                    loader: "source-map-loader",
+                },
+            ],
+        },
+    });
+}

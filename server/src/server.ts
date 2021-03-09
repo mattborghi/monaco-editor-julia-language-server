@@ -1,7 +1,3 @@
-/* --------------------------------------------------------------------------------------------
- * Copyright (c) 2018 TypeFox GmbH (http://www.typefox.io). All rights reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- * ------------------------------------------------------------------------------------------ */
 import * as ws from "ws";
 import * as http from "http";
 import * as url from "url";
@@ -9,12 +5,13 @@ import * as net from "net";
 import * as express from "express";
 import * as rpc from "vscode-ws-jsonrpc";
 import { launch } from "./server-launcher";
+require("dotenv").config();
 
-process.on('uncaughtException', function (err: any) {
-    console.error('Uncaught Exception: ', err.toString());
-    if (err.stack) {
-        console.error(err.stack);
-    }
+process.on("uncaughtException", function (err: any) {
+  console.error("Uncaught Exception: ", err.toString());
+  if (err.stack) {
+    console.error(err.stack);
+  }
 });
 
 // create the express application
@@ -25,10 +22,12 @@ app.use(express.static(__dirname));
 const server = app.listen(process.env.PORT);
 // create the web socket
 const wss = new ws.Server({
-    noServer: true,
-    perMessageDeflate: false
+  noServer: true,
+  perMessageDeflate: false,
 });
-server.on('upgrade', (request: http.IncomingMessage, socket: net.Socket, head: Buffer) => {
+server.on(
+  "upgrade",
+  (request: http.IncomingMessage, socket: net.Socket, head: Buffer) => {
     const pathname = request.url ? url.parse(request.url).pathname : undefined;
     if (pathname === process.env.CHANNEL) {
       wss.handleUpgrade(request, socket, head, (webSocket) => {
@@ -52,4 +51,5 @@ server.on('upgrade', (request: http.IncomingMessage, socket: net.Socket, head: B
         }
       });
     }
-})
+  }
+);
