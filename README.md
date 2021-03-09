@@ -65,6 +65,10 @@ docker-compose up --build
 
 Open the project at `http://localhost:8080/`.
 
+## Preview video
+
+[![Video Preview](./assets/imag/preview.png)](https://youtu.be/0hwiSMRdq7M)
+
 ## Resources
 
 - [monaco-languageclient](https://github.com/TypeFox/monaco-languageclient).
