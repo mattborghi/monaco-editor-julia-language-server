@@ -3,8 +3,6 @@ lib
 node_modules
 *.log
 dist
-package-lock.json
-Manifest.toml
 
 # Language Server Cache files
 Julia-*
