@@ -37,6 +37,34 @@ npm run start:dev
 
 > You can also run the script `RUN.dev.sh`.
 
+## Docker 
+
+In the root folder
+
+### Client
+
+```sh
+docker build -t client client/
+docker run -it -p 8080:8080 client
+```
+
+### Server
+
+```sh
+docker build -t server -f server/buster.Dockerfile server/
+docker run -it -p 3000:3000 server
+```
+
+### Compose
+
+Instead, we can run both docker with one command using `docker compose` as follows.
+
+```sh
+docker-compose up --build
+```
+
+Open the project at `http://localhost:8080/`.
+
 ## Preview video
 
 [![Video Preview](./assets/imag/preview.png)](https://youtu.be/0hwiSMRdq7M)

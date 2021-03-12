@@ -1,0 +1,11 @@
+services:
+  client:
+    build: client
+    ports:
+      - "8080:8080"
+  server:
+    build: 
+      context: server
+      dockerfile: buster.Dockerfile
+    ports: 
+      - "3000:3000"

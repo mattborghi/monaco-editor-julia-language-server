@@ -7,6 +7,9 @@ import * as rpc from "vscode-ws-jsonrpc";
 import { launch } from "./server-launcher";
 require("dotenv").config();
 
+const PORT = process.env.PORT || 3000;
+const CHANNEL = process.env.CHANNEL || "/JuliaLanguageServer";
+
 process.on("uncaughtException", function (err: any) {
   console.error("Uncaught Exception: ", err.toString());
   if (err.stack) {
@@ -19,7 +22,7 @@ const app = express();
 // server the static content, i.e. index.html
 app.use(express.static(__dirname));
 // start the server
-const server = app.listen(process.env.PORT);
+const server = app.listen(PORT);
 // create the web socket
 const wss = new ws.Server({
   noServer: true,
@@ -29,7 +32,7 @@ server.on(
   "upgrade",
   (request: http.IncomingMessage, socket: net.Socket, head: Buffer) => {
     const pathname = request.url ? url.parse(request.url).pathname : undefined;
-    if (pathname === process.env.CHANNEL) {
+    if (pathname === CHANNEL) {
       wss.handleUpgrade(request, socket, head, (webSocket) => {
         const socket: rpc.IWebSocket = {
           send: (content) =>
