@@ -14,13 +14,7 @@ This repository has an example of how to connect [Monaco Editor](https://microso
     - `DEPOT_PATH`: I suggest to leave it empty.
     - `STORE_PATH`: where the indexed packages will be stored.
 
-2. As the cache folder is not commited, create it
-
-```bash
-mkdir server/cache
-```
-
-3. Run the `Julia Language Server`
+2. Run the `Julia Language Server`
 
 ```sh
 cd server
@@ -28,7 +22,7 @@ npm run prepare
 npm run start
 ```
 
-4. Run the client
+3. Run the client
 
 ```bash
 cd client
