@@ -3,6 +3,7 @@ lib
 node_modules
 *.log
 dist
+.vscode
 
 # Language Server Cache files
 Julia-*
