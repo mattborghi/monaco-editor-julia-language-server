@@ -35,7 +35,7 @@
     "monaco-editor-webpack-plugin": "2.1.0",
     "monaco-languageclient": "0.13.1-next.4",
     "monaco-themes": "^0.3.3",
-    "normalize-url": "^5.3.0",
+    "normalize-url": "^6.0.0",
     "reconnecting-websocket": "^4.4.0",
     "setimmediate": "^1.0.5",
     "typescript": "^4.2.3",
