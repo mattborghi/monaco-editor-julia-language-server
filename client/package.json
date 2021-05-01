@@ -42,7 +42,7 @@
     "vscode-jsonrpc": "^6.0.0",
     "vscode-languageserver-protocol": "^3.16.0",
     "vscode-ws-jsonrpc": "^0.2.0",
-    "webpack": "^5.30.0",
+    "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0"
   },
   "devDependencies": {
