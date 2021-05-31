@@ -35,6 +35,6 @@
     "express": "^4.17.1",
     "vscode-languageserver": "^7.0.0",
     "vscode-ws-jsonrpc": "^0.2.0",
-    "ws": "^7.4.5"
+    "ws": "^7.4.6"
   }
 }
