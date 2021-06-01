@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/express": "^4.17.11",
+    "@types/express": "^4.17.12",
     "@types/node": "^15.0.2",
     "@types/ws": "^7.4.2",
     "css-loader": "^5.2.4",
