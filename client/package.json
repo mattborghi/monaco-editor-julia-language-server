@@ -66,7 +66,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.4",
     "file-loader": "^6.2.0",
-    "flow-bin": "^0.150.0",
+    "flow-bin": "^0.154.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^26.6.3",
