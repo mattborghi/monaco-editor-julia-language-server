@@ -31,7 +31,7 @@
     "babel-polyfill": "^6.26.0",
     "buffer": "^6.0.3",
     "monaco-editor": "0.21.2",
-    "monaco-editor-core": "0.21.2",
+    "monaco-editor-core": "0.26.0",
     "monaco-editor-webpack-plugin": "2.1.0",
     "monaco-languageclient": "0.13.1-next.4",
     "monaco-themes": "^0.3.3",
