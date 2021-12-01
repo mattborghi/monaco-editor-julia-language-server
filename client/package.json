@@ -38,7 +38,7 @@
     "normalize-url": "^7.0.0",
     "reconnecting-websocket": "^4.4.0",
     "setimmediate": "^1.0.5",
-    "typescript": "^4.3.5",
+    "typescript": "^4.5.2",
     "vscode-jsonrpc": "^6.0.0",
     "vscode-languageserver-protocol": "^3.16.0",
     "vscode-ws-jsonrpc": "^0.2.0",
