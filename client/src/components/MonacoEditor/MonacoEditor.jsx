@@ -26,8 +26,12 @@ const CodeEditor = () => {
 
     useEffect(() => {
         if (element.current) {
+            const uri = monaco.Uri.file('asd.jl')
+            // const uri = monaco.Uri.parse('inmemory://asd.jl')
+            console.log(uri)
             editor.current = monaco.editor.create(element.current, {
-                model: monaco.editor.createModel(value, "julia"),
+                model: monaco.editor.createModel(value, "julia", uri),
+                formatOnPaste: true,
                 glyphMargin: true,
                 lightbulb: {
                     enabled: true,

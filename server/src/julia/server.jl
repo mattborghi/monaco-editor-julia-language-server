@@ -23,14 +23,16 @@ project_path = something(Base.current_project(src_path), Base.load_path_expand(L
 # - command-line:   ARGS[3]
 symserver_store_path = length(ARGS) ≥ 3 ? ARGS[3] : nothing
 
-# If we don't use an absolute path the server hangs on indexing..
-# Check if the directoy exists before...
-if !isdir(symserver_store_path)
-    @info "Creating Directory: " * symserver_store_path * " for storing cache data"
-    mkdir(symserver_store_path)
+if !isnothing(symserver_store_path)
+    # If we don't use an absolute path the server hangs on indexing..
+    # Check if the directoy exists before...
+    if !isdir(symserver_store_path)
+        @info "Creating Directory: " * symserver_store_path * " for storing cache data"
+        mkdir(symserver_store_path)
+    end
+
+    symserver_store_path = abspath(joinpath(@__DIR__, "..", symserver_store_path))
 end
-# Convert to absolute path if necessary
-symserver_store_path = abspath(joinpath(@__DIR__, "..", symserver_store_path))
 
 # Make sure that we only load packages from this environment specifically.
 # empty!(LOAD_PATH)
@@ -45,11 +47,11 @@ using LanguageServer, SymbolServer
 
 function err_handler(err, bt)
     @info "There was an error"
-    println(err)
+    @info err
 end
 
-@info "Running language server" env=Base.load_path()[1] src_path project_path depot_path symserver_store_path
+@info "Running language server" env = Base.load_path()[1] src_path project_path depot_path symserver_store_path
 server = LanguageServerInstance(stdin, stdout, project_path, depot_path, err_handler, symserver_store_path)
 server.runlinter = true
-# server.lint_options = LanguageServer.StaticLint.LintOptions(true, true, true, true, true, true, true, true, true, true)
 run(server)
+
