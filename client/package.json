@@ -64,7 +64,7 @@
     "babel-plugin-check-es2015-constants": "^6.22.0",
     "copy-webpack-plugin": "^9.0.1",
     "cross-env": "^7.0.3",
-    "css-loader": "^5.2.7",
+    "css-loader": "^6.6.0",
     "file-loader": "^6.2.0",
     "flow-bin": "^0.155.0",
     "html-loader": "^2.1.2",
