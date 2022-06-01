@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@codingame/monaco-jsonrpc": "^0.3.1",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "vscode-languageserver": "^7.0.0",
     "vscode-ws-jsonrpc": "^0.2.0",
