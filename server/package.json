@@ -30,7 +30,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "@codingame/monaco-jsonrpc": "^0.3.1",
+    "@codingame/monaco-jsonrpc": "^0.4.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "vscode-languageserver": "^7.0.0",
