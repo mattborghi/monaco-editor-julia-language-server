@@ -34,7 +34,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "vscode-languageserver": "^7.0.0",
-    "vscode-ws-jsonrpc": "^0.2.0",
+    "vscode-ws-jsonrpc": "^2.0.0",
     "ws": "^7.5.3"
   }
 }
