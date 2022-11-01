@@ -33,7 +33,7 @@
     "monaco-editor": "0.21.2",
     "monaco-editor-core": "0.21.2",
     "monaco-editor-webpack-plugin": "2.1.0",
-    "monaco-languageclient": "0.13.1-next.4",
+    "monaco-languageclient": "4.0.1",
     "monaco-themes": "^0.3.3",
     "normalize-url": "^7.0.0",
     "reconnecting-websocket": "^4.4.0",
